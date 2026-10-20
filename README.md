@@ -76,6 +76,9 @@ The full list is in **Options > Controls**.
 Send Mo:
 
 1. **The version**: bottom right of the start menu, like `v2026.10.16.1432 (4ba034f)`.
+
+   ![The start menu: the version is in its bottom right corner](version.webp)
+
 2. **What happened**, and what you were doing just before. A screenshot or a phone video helps a lot.
 3. **The log file**, if the game crashed or behaved strangely. Press Windows+R, paste this and press
    Enter:
