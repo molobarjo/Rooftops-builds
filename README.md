@@ -212,6 +212,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **21 October 2026**
 
+- The boroughs' streets lit at night: rows of street lamps between Brooklyn's, Queens', the Bronx's and New Jersey's blocks, so across the water they read as a lit city, not dark land.
 - The walk-in towers' street floors stood 15 cm under where you walk (Mo spotted the people sunk into the Avengers lobby): the city's sidewalk slab runs under the whole block, so the Bugle's, the Planet's and Avengers Tower's lobbies, their furniture, people, doors and lift stops now sit on it.
 - Avengers Tower, the third walk-in tower: off the landing pad, where the deck runs in under the penthouse, a door into a little hall and stairs up into the penthouse's glass box, now the lounge (the bar, sofas round a table with the hammer on it, the holotable, three armours in lit cases, AVENGERS on the core wall, J.A.R.V.I.S. to greet you); a lift down to a new lobby in the podium's glass storey (sliding street doors, reception, security gates). The model is hollowed round the rooms: its glass stays the tower's opaque glass from outside and isn't there from inside, where the rooms' own panes look out on the city; each room is drawn only while you are in it or can see in. New tools/avengers_interior_test.
 - Traffic from the air at night: past the real cars (about 450 m), every avenue and street carries moving car lights, white headlights coming your way and red tail lights going away, so from high up the avenues are rivers of white and red.
