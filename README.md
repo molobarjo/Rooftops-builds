@@ -50,35 +50,34 @@ the menu lists what has changed. Anything new since the last version you played 
 
 ## Controls
 
-Keys are by position, so on a French (AZERTY) keyboard "W A S D" are **Z Q S D**.
+Keys are by position, so a French (AZERTY) keyboard plays with **Z Q S D**, an English (QWERTY) one
+with **W A S D**: both are below. A controller (Xbox or PlayStation) works too: plug it in before or
+during the game; the menus work with it as well (stick to move, A / Cross to pick, B / Circle to go back).
+On screen, the game shows your own keys or your controller's buttons, whichever you used last.
 
-| | |
-|---|---|
-| Move | W A S D (or the arrow keys) |
-| Look around | the mouse |
-| Jump / jump off a wall / open the jacket in the air (glide) | Space |
-| Sprint | Shift |
-| Slide at a run, climb down, landing roll | Ctrl |
-| Use (change into Bis in a phone booth, by its door; buy a jacket; launch the X-Jet; a lift) | E |
-| As himself: shout a warning at a construction accident | E (with nothing to use nearby) |
-| As Bis: take off / land | double-tap Space, or V |
-| As Bis: go faster in flight | Shift |
-| As Bis: use a power / next power | W on a French keyboard (Z on English) / Tab |
-| Slow time (Bis) | R |
-| Fight: strike, counter, takedown | F, C, X (or left, right, middle click) |
-| Map | M |
-| Pause menu (all the controls, settings, save) | Esc |
-| Stuck? Respawn | Esc, then the **DEBUG** tab on the right: Teleport > Respawn |
+<!-- controls table: written by tools/controls_doc.tscn, edit there -->
+| | Keyboard: French (English) | Controller: Xbox (PlayStation) |
+|---|---|---|
+| Move (or the arrow keys) | **Z** **Q** **S** **D** (**W** **A** **S** **D**) | left stick |
+| Look around | the mouse | right stick |
+| Jump / jump off a wall / open the jacket in the air (glide) | **Space** | **A** (**Cross**) |
+| Sprint (tap or hold: **Options > Controls**) | **Shift** | **LT** (**L2**) |
+| Slide at a run, climb down, landing roll | **Ctrl** | **B** (**Circle**) |
+| Use (change into Bis in a phone booth, by its door; buy a jacket; launch the X-Jet; a lift) | **E** | **RB** (**R1**) |
+| As himself: shout a warning at a construction accident (with nothing to use nearby) | **E** | **RB** (**R1**) |
+| As Bis: take off / land | double-tap **Space**, or **V** | double-tap **A**, or **LS** (**Cross**, or **L3**) |
+| As Bis: go faster in flight | **Shift** | **LT** (**L2**) |
+| As Bis: use a power / pick a power | **W** / **Tab** (**Z** / **Tab**) | **RT** / **D-pad left**, **D-pad right** (**R2** / **D-pad left**, **D-pad right**) |
+| As Bis: X-ray vision on / off | **A** (**Q**) | **D-pad up** |
+| As Bis: slow time | **R** | **RS** (**R3**) |
+| Fight: strike, counter (hold: guard), takedown | **F**, **C**, **X** (or left, right, middle click) | **X**, **Y**, **LB** (**Square**, **Triangle**, **L1**) |
+| Map | **M** (**;**) | **View** (**Share**) |
+| Pause menu (all the controls, settings, save) | Esc | **Menu** (**Options**) |
+| Stuck? Respawn | Esc, then the **DEBUG** tab on the right: Teleport > Respawn | the same |
+<!-- end of controls table -->
 
-The full list is in **Options > Controls**.
-
-**With a controller** (Xbox or PlayStation; plug it in before or during the game): left stick to move,
-right stick for the camera, A / Cross to jump, B / Circle to slide or drop, X / Square to strike,
-Y / Triangle to counter, LT / L2 held to sprint, RB / R1 to use (phone booths), LB / L1 for a
-takedown. As Bis: RT / R2 uses the power, the d-pad picks one, the left stick's click flies, the right
-stick's click slows time. View / Share opens the map, Menu / Options pauses. The pad works in the menus
-too (stick to move, A to pick, B to go back), and every button can be changed in **Options > Controls**, where **Show the pad** draws
-your controller with what each button does.
+The full list is in **Options > Controls**, where you can change any key or button, the camera speed and
+inverted up and down, and **Show the pad** draws your controller with what each button does.
 
 ## Found a bug? Tell Mo
 
@@ -107,6 +106,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **21 October 2026**
 
+- Every "press this" on screen shows the real key or button as a picture, from Mo's pixel-art sheets: the keycap your own keyboard prints there (Z on AZERTY where QWERTY has W), the mouse with its button lit, or the pad's button (Xbox or PlayStation), whichever you used last. In the phone booth, X-Jet, jacket shop and lift prompts, the mission lines (construction, robbery, Flight 1549, the plane), the takedown hint, the cutscenes' skip, the map's hint, the minimap, the loading screen, the test ground's keys and the Controls list. PLAYING.md's controls table is now written from the bindings (tools/controls_doc.tscn), French and English keyboards and both pads side by side.
 - The Controls page grows up. Settings at the top: camera speed for the mouse and for the pad's right stick (25% to 300%), up and down inverted for each, and sprint held or toggled (a tap runs, another or stopping walks; a tap standing still waits for him to go). A search box (an action, or a key: "space", "RT"), groups that fold away under their headings (the debug ones start folded), and a line saying what a rebind moved ("Space moved from Jump to Takedown.": one press never does two things, so a key in use moves rather than clashing). Reset puts the settings back too.
 - Gamepad support (Xbox and PlayStation; Mo picked the layout). Left stick moves (analog), right stick turns the camera, A jump, B down/slide/drop, X strike, Y counter, LB takedown, RB use, LT sprint, RT Bis's power, L3 fly, R3 slow time, the d-pad picks powers (up: X-ray), View the map, Menu pauses (fixed, like Esc). The menus work on the pad (stick or d-pad, A, B back), the map too (right stick zooms, X waypoint under a cross, Y clears). Every action has a Pad column on the Controls page, saved with the rest. Prompts name the pad's buttons, in its own words (Cross, R2...), whenever the pad was the last thing touched, and the keys again once the keyboard is. The Pad column shows each button as its icon, cut from Mo's pixel-art sprite sheets (Xbox or PlayStation to match the pad), and Show the pad swaps the list for Mo's drawing of his pad (Xbox Series or DualSense) with a line from each button to what it does, read off the bindings. tools/gamepad_check.tscn tests it.
 
@@ -137,13 +137,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - The captured moves reviewed on the PSX man (Mo: review the animations, replace what was generated, check for clipping, test with the new model, on the parkour map). What was wrong and is fixed: a captured key (free) was solved with no hinge at all, so knees and elbows bent sideways or backward by up to 150 degrees; now the hinge still turns to face the way the lower bone points, with nothing clamped (the upper bone turns as far as it must, the fold goes past the human most, the knee's turn stops at a quarter so a knee locked past straight folds back a little instead of the thigh turning round), and the turn fades in with the bend so a limb passing through straight no longer snaps its upper bone half round (177 degrees in one frame, before). The pack conversions (fbx_to_poses.py) gave the pelvis under half the trunk's lean, so a roll or a flip bent at the waist instead of turning over: the hips' own lean now goes to the pelvis in full; all 171 pack moves converted again. The video captures put his feet up to 60 cm through the floor (the tracker's figure has shorter legs): the pelvis's height is now worked out from the game's own leg lengths, and a captured key whose feet still come out under the floor is lifted onto it in the solve. A hand laid flat on a floor with the forearm straight down built an empty basis (an error flood in the audits). The audit's mocap part (--only=mocap, the probe's joints_free) and tools/mocap/audit_summary.py grade the 270 moves: 98 with nothing to note, 83 with only a limb against the body (tucks, mostly: the thigh pressed to the chest), 63 with a knee or elbow still reading backward somewhere (video noise, real-footage stretches), 73 with a snap left, 15 with hands under the floor (moves draped over a block: a vault, a slide, a hang, which only make sense with their obstacle). First two captured moves in the game, over the hand-written clips (CharacterAnimator.MOCAP_CLIPS): the long fall is the Humane pack's skydiver spread, the swimming stroke its breaststroke. The parkour test ground's check passes with them in.
 - Clipping read off the real mesh (Mo: no big clipping, minimal is acceptable, check with the wire mesh). tools/mesh_clip_dump.gd poses the PSX man through every captured move and writes his skinned vertices; tools/mocap/mesh_clip.py reads them part against part by winding number, beyond the rest pose's seams, folds at a joint apart; mocap_preview --wire shows a pose as lines. It found the forearms through the chest and belly in most captured moves (12 cm: a figure built otherwise than he is), so a captured key now goes through SelfContact: the limbs swung out of his trunk, fitted to the mesh he wears, the same shapes the pose audit's probe uses. With it the knee's swivel is measured from the pelvis's own hinge (a thigh pointing straight up flipped it before) and the hinge blends in by direction, not angle. By the mesh, the 270 captured moves went from 6 clean, 28 minimal, 66 noticeable and 170 big (over 6 cm) to 41, 62, 77 and 90; the two in the game (the long fall, the stroke) are clean. What is left big is mostly an arm the figure swept right through its own body (a roll, a vault), kept in a little rather than leaping out. G on the parkour test ground drops a gang round him to fight on the course.
 - The NPCs stand straight in their rest pose, like Mo's jointed figure: knee under hip and ankle under knee, shoulders, elbows and hands on the same line, arms straight out and a little lowered, each measured on its own skeleton (their animations are unchanged by this). Their arms are a little shorter, the men's belly lines up with their hips, and everyone's front is flat from chest (a woman's from under her bust) to groin.
-- The NPCs' shoulders and hips where theirs are (Mo: arms coming out too high, a lump at the shoulder, the side of the shirt stretched straight): their skeletons now take their own shoulder and hip joints' width and height. The women's hips tip forward (waistband level), their clips stand upright (Mixamo's straighter spine made them lean back), and a fleeing woman runs at her run's own pace instead of whirling her legs to the men's sprint speed.
 
 <details>
 <summary>Older changes</summary>
 
 **19 October 2026**
 
+- The NPCs' shoulders and hips where theirs are (Mo: arms coming out too high, a lump at the shoulder, the side of the shirt stretched straight): their skeletons now take their own shoulder and hip joints' width and height. The women's hips tip forward (waistband level), their clips stand upright (Mixamo's straighter spine made them lean back), and a fleeing woman runs at her run's own pace instead of whirling her legs to the men's sprint speed.
 - The women walk, stand and run as women: Mo's Mixamo clips (Female Walk, idle, running and 20 more, in reference/anims/mixamo/female/) retargeted onto the game's skeleton, played by every woman in the crowd, the banks, the police, the fire crews, the building sites and the gangs, and in the Character viewer; the crowd's far-off cutouts of the women are drawn from them too.
 - The NPCs each stand on a skeleton of their own proportions (their own leg, trunk and arm lengths, shoulder and hip widths; before, everyone was stretched to the man's), the clips' hip movement scaled to their own hip height so their feet stay planted; their seat tucked under them (15 degrees) so the line from the back down the legs runs straight.
 
