@@ -71,6 +71,14 @@ Keys are by position, so on a French (AZERTY) keyboard "W A S D" are **Z Q S D**
 
 The full list is in **Options > Controls**.
 
+**With a controller** (Xbox or PlayStation; plug it in before or during the game): left stick to move,
+right stick for the camera, A / Cross to jump, B / Circle to slide or drop, X / Square to strike,
+Y / Triangle to counter, LT / L2 held to sprint, RB / R1 to use (phone booths), LB / L1 for a
+takedown. As Bis: RT / R2 uses the power, the d-pad picks one, the left stick's click flies, the right
+stick's click slows time. View / Share opens the map, Menu / Options pauses. The pad works in the menus
+too (stick to move, A to pick, B to go back), and every button can be changed in **Options > Controls**, where **Show the pad** draws
+your controller with what each button does.
+
 ## Found a bug? Tell Mo
 
 Send Mo:
@@ -95,6 +103,10 @@ Delete `save.cfg` there to start over completely.
 ## Changelog
 
 What has changed, newest first (the game's own **Changelog** shows the same).
+
+**21 October 2026**
+
+- Gamepad support (Xbox and PlayStation; Mo picked the layout). Left stick moves (analog), right stick turns the camera, A jump, B down/slide/drop, X strike, Y counter, LB takedown, RB use, LT sprint, RT Bis's power, L3 fly, R3 slow time, the d-pad picks powers (up: X-ray), View the map, Menu pauses (fixed, like Esc). The menus work on the pad (stick or d-pad, A, B back), the map too (right stick zooms, X waypoint under a cross, Y clears). Every action has a Pad column on the Controls page, saved with the rest. Prompts name the pad's buttons, in its own words (Cross, R2...), whenever the pad was the last thing touched, and the keys again once the keyboard is. The Pad column shows each button as its icon, cut from Mo's pixel-art sprite sheets (Xbox or PlayStation to match the pad), and Show the pad swaps the list for Mo's drawing of his pad (Xbox Series or DualSense) with a line from each button to what it does, read off the bindings. tools/gamepad_check.tscn tests it.
 
 **20 October 2026**
 
@@ -125,10 +137,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - The NPCs stand straight in their rest pose, like Mo's jointed figure: knee under hip and ankle under knee, shoulders, elbows and hands on the same line, arms straight out and a little lowered, each measured on its own skeleton (their animations are unchanged by this). Their arms are a little shorter, the men's belly lines up with their hips, and everyone's front is flat from chest (a woman's from under her bust) to groin.
 - The NPCs' shoulders and hips where theirs are (Mo: arms coming out too high, a lump at the shoulder, the side of the shirt stretched straight): their skeletons now take their own shoulder and hip joints' width and height. The women's hips tip forward (waistband level), their clips stand upright (Mixamo's straighter spine made them lean back), and a fleeing woman runs at her run's own pace instead of whirling her legs to the men's sprint speed.
 - The women walk, stand and run as women: Mo's Mixamo clips (Female Walk, idle, running and 20 more, in reference/anims/mixamo/female/) retargeted onto the game's skeleton, played by every woman in the crowd, the banks, the police, the fire crews, the building sites and the gangs, and in the Character viewer; the crowd's far-off cutouts of the women are drawn from them too.
-- The NPCs each stand on a skeleton of their own proportions (their own leg, trunk and arm lengths, shoulder and hip widths; before, everyone was stretched to the man's), the clips' hip movement scaled to their own hip height so their feet stay planted; their seat tucked under them (15 degrees) so the line from the back down the legs runs straight.
 
 <details>
 <summary>Older changes</summary>
+
+**19 October 2026**
+
+- The NPCs each stand on a skeleton of their own proportions (their own leg, trunk and arm lengths, shoulder and hip widths; before, everyone was stretched to the man's), the clips' hip movement scaled to their own hip height so their feet stay planted; their seat tucked under them (15 degrees) so the line from the back down the legs runs straight.
 
 **18 October 2026**
 
