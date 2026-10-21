@@ -38,7 +38,8 @@ the menu lists what has changed. Anything new since the last version you played 
 - **New game**: starts from the beginning.
 - **Continue**: back where you saved. The game saves by itself every two minutes and when you quit, and
   you can save from the pause menu (Esc, **Save game**).
-- **Options**: controls (change any key), sound and graphics. If the game is slow, pick a lower graphics
+- **Options**: controls (change any key or button, mouse and stick camera speed, invert up and down,
+  tap or hold to sprint), sound and graphics. If the game is slow, pick a lower graphics
   preset there.
 - **Changelog**: what's new.
 - **Test grounds**: practice maps apart from the city, ready in seconds. The parkour test ground has a
@@ -106,6 +107,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **21 October 2026**
 
+- The Controls page grows up. Settings at the top: camera speed for the mouse and for the pad's right stick (25% to 300%), up and down inverted for each, and sprint held or toggled (a tap runs, another or stopping walks; a tap standing still waits for him to go). A search box (an action, or a key: "space", "RT"), groups that fold away under their headings (the debug ones start folded), and a line saying what a rebind moved ("Space moved from Jump to Takedown.": one press never does two things, so a key in use moves rather than clashing). Reset puts the settings back too.
 - Gamepad support (Xbox and PlayStation; Mo picked the layout). Left stick moves (analog), right stick turns the camera, A jump, B down/slide/drop, X strike, Y counter, LB takedown, RB use, LT sprint, RT Bis's power, L3 fly, R3 slow time, the d-pad picks powers (up: X-ray), View the map, Menu pauses (fixed, like Esc). The menus work on the pad (stick or d-pad, A, B back), the map too (right stick zooms, X waypoint under a cross, Y clears). Every action has a Pad column on the Controls page, saved with the rest. Prompts name the pad's buttons, in its own words (Cross, R2...), whenever the pad was the last thing touched, and the keys again once the keyboard is. The Pad column shows each button as its icon, cut from Mo's pixel-art sprite sheets (Xbox or PlayStation to match the pad), and Show the pad swaps the list for Mo's drawing of his pad (Xbox Series or DualSense) with a line from each button to what it does, read off the bindings. tools/gamepad_check.tscn tests it.
 
 **20 October 2026**
@@ -136,13 +138,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - Clipping read off the real mesh (Mo: no big clipping, minimal is acceptable, check with the wire mesh). tools/mesh_clip_dump.gd poses the PSX man through every captured move and writes his skinned vertices; tools/mocap/mesh_clip.py reads them part against part by winding number, beyond the rest pose's seams, folds at a joint apart; mocap_preview --wire shows a pose as lines. It found the forearms through the chest and belly in most captured moves (12 cm: a figure built otherwise than he is), so a captured key now goes through SelfContact: the limbs swung out of his trunk, fitted to the mesh he wears, the same shapes the pose audit's probe uses. With it the knee's swivel is measured from the pelvis's own hinge (a thigh pointing straight up flipped it before) and the hinge blends in by direction, not angle. By the mesh, the 270 captured moves went from 6 clean, 28 minimal, 66 noticeable and 170 big (over 6 cm) to 41, 62, 77 and 90; the two in the game (the long fall, the stroke) are clean. What is left big is mostly an arm the figure swept right through its own body (a roll, a vault), kept in a little rather than leaping out. G on the parkour test ground drops a gang round him to fight on the course.
 - The NPCs stand straight in their rest pose, like Mo's jointed figure: knee under hip and ankle under knee, shoulders, elbows and hands on the same line, arms straight out and a little lowered, each measured on its own skeleton (their animations are unchanged by this). Their arms are a little shorter, the men's belly lines up with their hips, and everyone's front is flat from chest (a woman's from under her bust) to groin.
 - The NPCs' shoulders and hips where theirs are (Mo: arms coming out too high, a lump at the shoulder, the side of the shirt stretched straight): their skeletons now take their own shoulder and hip joints' width and height. The women's hips tip forward (waistband level), their clips stand upright (Mixamo's straighter spine made them lean back), and a fleeing woman runs at her run's own pace instead of whirling her legs to the men's sprint speed.
-- The women walk, stand and run as women: Mo's Mixamo clips (Female Walk, idle, running and 20 more, in reference/anims/mixamo/female/) retargeted onto the game's skeleton, played by every woman in the crowd, the banks, the police, the fire crews, the building sites and the gangs, and in the Character viewer; the crowd's far-off cutouts of the women are drawn from them too.
 
 <details>
 <summary>Older changes</summary>
 
 **19 October 2026**
 
+- The women walk, stand and run as women: Mo's Mixamo clips (Female Walk, idle, running and 20 more, in reference/anims/mixamo/female/) retargeted onto the game's skeleton, played by every woman in the crowd, the banks, the police, the fire crews, the building sites and the gangs, and in the Character viewer; the crowd's far-off cutouts of the women are drawn from them too.
 - The NPCs each stand on a skeleton of their own proportions (their own leg, trunk and arm lengths, shoulder and hip widths; before, everyone was stretched to the man's), the clips' hip movement scaled to their own hip height so their feet stay planted; their seat tucked under them (15 degrees) so the line from the back down the legs runs straight.
 
 **18 October 2026**
