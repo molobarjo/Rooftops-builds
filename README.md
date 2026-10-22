@@ -324,6 +324,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **22 October 2026**
 
+- The Lyoko factory's walls no longer show the same brick patches over and over (Mo): where the render has fallen off to the brick is now picked by noise on where each bit of wall is, so every patch is its own shape and size and none repeats; the brick under it is a texture of its own.
 - The Lyoko factory's rust no longer repeats as a pattern (Mo): every 80 cm cell of a beam, column or frame turns, stretches and shifts the rust texture its own way, blended into the cells round it.
 - The Code Lyoko factory has gone to ruin (Mo): its render cracked, stained and fallen off to the brick, moss creeping up the walls from the ground and lying on the floors and every sill and ledge; its roof corrugated tin, rusting, with holes rusted through it (the sun falls through them, and you can drop through them) on rusted purlins; under each hole what fell through it (rubble, sheets of tin flat or bent, a purlin now and then); thick rusted steel frames in the windows, some with all their bars, some with a few, some with only the frame or none (about half the low ones open enough to climb through); the trusses and columns rusted; cobwebs in window corners and where the trusses meet the walls. Textures painted by tools/blender/build_factory_ruin_textures.py; still checked solid and flicker-free by tools/factory_ruin_check.sh.
 - Red aircraft warning lights blink on the corners of every tower over 150 m at night, each on its own beat, as on the real skyline.
