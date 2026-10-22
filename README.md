@@ -131,6 +131,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - No more first-sight stutter from shaders: behind the loading screen, every kind of material in the city (and the models that only come in later: Bis, the jackets, fire trucks, helicopters, the X-Jet, the aliens, the neuralyzer...) is drawn once, so the graphics card builds them all then instead of the first time each shows up in play (about 160 kinds). Kept in memory for the session and on disk for the next launches; the first launch after an update rebuilds them. The log says how long it took.
 - Taken in by the police, he's now seen in the station's holding cell through the bars - with whoever its officers brought in on the benches - before he's let out on its step three hours later.
 - Hands, step 3 of 3: the gestures in play. Fists in the fights come from the one library (and Bis's jab); the parry's hand opens, a blow knocks both hands open, vaulting over a man he takes hold of his shoulders; knives and swords sit in a closed grip, the heavy gun and the Ghostbusters' wands in a gun grip with the other hand round the front. On a ledge his fingers hook over its edge; the jacket is held open by its edges in the glide. Flying fast his hands are flat (the swim), hovering open; flat palms in a vault or pulling up over an edge, a fist landing hero-style; flat under what he lifts, holding whoever he carries out of a fire. NPC gunmen close their hand round the gun's grip (the other round the barrel), the crowd points with a finger and films with the phone in hand, cheering with fists; the pilots hold the stick and lay their hands flat; the neuralyzer sits in a closed grip; a police officer gives him a thumbs up when he thanks him, and points when he tells him to move along. The hands now come after every other layer on his body, so nothing snaps them open a frame later, and a fist that meets the ground or a wall stays a fist (knuckles on it) where an open hand lies flat.
+- The climber's crimp is in the hand library now (crimp: the fingers bent over a hold's edge at their first knuckles, the thumb pressed in beside them), and climbing takes its fingers from there, so every hand shape in the game comes from the one library. It looks as it did.
 
 **21 October 2026**
 
@@ -149,10 +150,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 **22 October 2026**
 
 - Houses, step 3 of 3: no two alike. Every house takes its own look from where it stands (the same close up and far off): its siding or brick colour, roof colour, trim colour (mostly white, now and then cream, green, black, burgundy or navy, the window frames and the porch matching), front door colour, which bay the door is in, a chimney or not and on which side, a dormer, a porch, a satellite dish now and then, and on many an old wiry TV aerial (strapped to the chimney or on the ridge); and out in Queens its front yard: an iron fence, a white picket fence, a hedge or open lawn.
-- Quitting no longer sometimes prints "74 resources still in use at exit" (the music's and the ambience's loops). Godot pauses a player's sound as it leaves the tree and only frees a stopped one on the audio thread's next mix, and at quit the sound driver often shut before that mix came. The Music autoload now stops every player in the game once the whole tree is gone and waits for that one mix (a few milliseconds; up to ~0.1 s headless); the other sound autoloads' own stop-on-exit went.
 
 <details>
 <summary>Older changes</summary>
+
+**22 October 2026**
+
+- Quitting no longer sometimes prints "74 resources still in use at exit" (the music's and the ambience's loops). Godot pauses a player's sound as it leaves the tree and only frees a stopped one on the audio thread's next mix, and at quit the sound driver often shut before that mix came. The Music autoload now stops every player in the game once the whole tree is gone and waits for that one mix (a few milliseconds; up to ~0.1 s headless); the other sound autoloads' own stop-on-exit went.
 
 **21 October 2026**
 
