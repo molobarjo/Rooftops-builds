@@ -104,6 +104,10 @@ Delete `save.cfg` there to start over completely.
 
 What has changed, newest first (the game's own **Changelog** shows the same).
 
+**22 October 2026**
+
+- Quitting no longer sometimes prints "74 resources still in use at exit" (the music's and the ambience's loops). Godot pauses a player's sound as it leaves the tree and only frees a stopped one on the audio thread's next mix, and at quit the sound driver often shut before that mix came. The Music autoload now stops every player in the game once the whole tree is gone and waits for that one mix (a few milliseconds; up to ~0.1 s headless); the other sound autoloads' own stop-on-exit went.
+
 **21 October 2026**
 
 - Houses, step 2 of 3: the geometry. Pitched roofs overhang the walls with white fascias and soffits under the eaves; gutters along both eaves and two downpipes down the front (climbable, like the brick buildings' drainpipes); proper brick chimneys with a cap and clay pots (now on most pitched houses); dormers with a little gable roof and a framed window; porches with a deck, a step, square posts and railings; iron railings up the stoops; and out in Queens, a front yard for every house set back from the street: an iron fence, a gate standing open, a path to the door. The small things (gutters, downpipes, railings, fences) are Graphics > Small props, off on Potato and Low.
@@ -130,13 +134,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - Ghosts and the Ghostbusters (Mo: Bis is only a spectator, a ghost passing through the man slimes him). Ghosts at night at the New York Public Library, the Plaza Hotel, the New Amsterdam Theatre and the subway, four kinds, PS1 see-through, scaring pedestrians. Ecto-1 now lives at the firehouse (no longer in the ordinary traffic) and answers with its siren; four Ghostbusters in the first film's jumpsuit (Mo's PSX pack people, repainted) with proton packs, streams and the trap. Debug: Events > Ghost (library, Plaza, New Amsterdam in turn) and Ghost out of the subway; Teleport > Ghostbusters' firehouse.
 - NYPD patrols, step 2 of the police plan: radio cars out of the station houses on their sectors' streets (two per station near him, two to four legs, home and parked again), foot patrols at Times Square, Penn Station and Grand Central, and no more random police in the traffic. DEBUG tab: Events > Police patrol. The fire department, the alien incidents and the patrols now share one road graph (World.street_routes()).
 - DEBUG tab, Tools: "What's glowing near me?" lists every small glowing or see-through thing within 60 m (what it is, where, how far) in the log and on the clipboard - to name the mystery glowing blobs over 8th Avenue next time they show up.
-- Fixed: with the hit boxes shown (H), changing into Bis or back cut his fighting body from the hit-box wireframe too - a script error, and a body with no pieces for blows to land on. The wireframe is now marked as an overlay and left out, and only a mesh's triangles are ever cut.
 
 <details>
 <summary>Older changes</summary>
 
 **21 October 2026**
 
+- Fixed: with the hit boxes shown (H), changing into Bis or back cut his fighting body from the hit-box wireframe too - a script error, and a body with no pieces for blows to land on. The wireframe is now marked as an overlay and left out, and only a mesh's triangles are ever cut.
 - Controls, the last pieces. The pad rumbles: every blow, takedown and parry, the shockwave slam, catching the plane, landings (a roll softly, a bad fall hard) and sonic booms, with a strength slider (0 is off; it buzzes as you set it) and only while the pad is in use. A dead zone slider for the sticks, for a pad that drifts. The test ground's keys (1-0, T, H, J, K, I, B, P, O, G, F3) are now actions: rebindable in a folded "Test ground" group, shown as their pictures. README has a "Changing the controls" guide for later changes.
 - Every "press this" on screen shows the real key or button as a picture, from Mo's pixel-art sheets: the keycap your own keyboard prints there (Z on AZERTY where QWERTY has W), the mouse with its button lit, or the pad's button (Xbox or PlayStation), whichever you used last. In the phone booth, X-Jet, jacket shop and lift prompts, the mission lines (construction, robbery, Flight 1549, the plane), the takedown hint, the cutscenes' skip, the map's hint, the minimap, the loading screen, the test ground's keys and the Controls list. PLAYING.md's controls table is now written from the bindings (tools/controls_doc.tscn), French and English keyboards and both pads side by side.
 - The Controls page grows up. Settings at the top: camera speed for the mouse and for the pad's right stick (25% to 300%), up and down inverted for each, and sprint held or toggled (a tap runs, another or stopping walks; a tap standing still waits for him to go). A search box (an action, or a key: "space", "RT"), groups that fold away under their headings (the debug ones start folded), and a line saying what a rebind moved ("Space moved from Jump to Takedown.": one press never does two things, so a key in use moves rather than clashing). Reset puts the settings back too.
