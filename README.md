@@ -60,6 +60,7 @@ On screen, the game shows your own keys or your controller's buttons, whichever 
 |---|---|---|
 | Move (or the arrow keys) | **Z** **Q** **S** **D** (**W** **A** **S** **D**) | left stick |
 | Look around | the mouse | right stick |
+| Indoors: the camera over the other shoulder | **Y** | **D-pad down** |
 | Jump / jump off a wall / open the jacket in the air (glide) | **Space** | **A** (**Cross**) |
 | Sprint (tap or hold: **Options > Controls**) | **Shift** | **LT** (**L2**) |
 | Slide at a run, climb down, landing roll | **Ctrl** | **B** (**Circle**) |
@@ -239,6 +240,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **22 October 2026**
 
+- The camera indoors goes over his shoulder, so it stops ending up in walls and ceilings. In a listed room (the walk-in towers' for now) or anywhere under a low ceiling shut in all round (a corridor, a train), it eases in close behind his right shoulder, just over his head and a little wider; Y (D-pad down) puts it over the other shoulder, and it swaps by itself away from a wall right beside it. It comes back out a moment after you leave, so doorways don't flicker; alleys, awnings and the El overhead keep the normal camera. It no longer slips through thin walls and rails, and he fades out when the camera has to come right up against him. New test ground station, "Tight room" (a room, a low corridor, a narrow alley), and tools/shoulder_camera_check.
 - The Empire State Building, the fourth walk-in tower: the street door under the Fifth Avenue marquee into the three-storey marble lobby (gold-leaf ceiling, the building in aluminium relief on the back wall, brass lift doors, the information desk), and the lift to the 86th floor's observatory round its core (windows all round, King Kong's poster, the gift counter, visitors), its door out onto the open-air deck with coin binoculars along the parapet. The windows are opaque from outside as on every tower. The towers' street floors are drawn 2 cm over the sidewalk's slab now, so the two don't flicker through each other. New tools/empire_interior_test.
 
 **21 October 2026**
