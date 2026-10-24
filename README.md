@@ -39,6 +39,9 @@ the menu lists what has changed. Anything new since the last version you played 
   **Quiet** (room to explore, trouble now and then), **Normal** (as the game was made), **Busy**, or
   **Chaos** (one thing after another). Change it any time in **Options > Gameplay**, where you can also
   set each kind of event on its own (bank robberies, fires, gangs, ghosts...: Off to Lots).
+  Then how hard the fights should be: **Easy** (fewer of them, slower to swing, a longer warning, and
+  he heals twice as fast), **Normal**, or **Hard** (quicker swings and shots, more heavies, and a
+  beating keeps him hurt longer). Also in **Options > Gameplay**.
 - **Continue**: back where you saved. The game saves by itself every two minutes and when you quit, and
   you can save from the pause menu (Esc, **Save game**).
 - **Options**: controls (change any key or button, mouse and stick camera speed, invert up and down,
@@ -114,6 +117,10 @@ Delete `save.cfg` there to start over completely.
 
 What has changed, newest first (the game's own **Changelog** shows the same).
 
+**24 October 2026**
+
+- Fights: Easy, Normal (as they were) or Hard, on the Gameplay page beside the city's activity and asked on New game after it, apart from how busy the city is. Easy: fewer enemies at once, slower swings and shots, a longer slow-motion warning, fewer heavies, he gets over a beating in half the time (and takes four blows, not three, to go down). Hard: quicker swings and shots, two swinging at once more often, more heavies, a shorter warning, and hurt lasts 1.6 times as long. Never more enemies at once than the graphics setting allows. Applied live.
+
 **23 October 2026**
 
 - City activity: how busy the city is, on the Gameplay page and asked on New game. Quiet, Normal (the game as it was), Busy or Chaos, or Custom: each kind of event on its own, from Off to Lots (bank robberies, street trouble, building fires, crime crews, gangs, construction accidents, ghosts, the Men in Black, news vans and paparazzi, planes in trouble, Flight 1549). It changes how often they come, live, never how many can be on at once (only fewer, when turned down). On Potato and Low graphics the boosts are halved. The DEBUG tab's CITY ACTIVITY shows when each is next due.
@@ -152,13 +159,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - Climbing onto things that move (Mo: "when the car moves I end up floating"). A climb onto a car's roof, a hang from a truck's edge, a vault over a car's bonnet were all laid out where the car was when he grabbed it, so a car driving off left him climbing onto thin air. Now he keeps hold of whatever he grabbed: every frame the climb goes where it goes (turning with it too), he comes up onto its roof where the roof is now, and lets go of it at its speed. Checked by a new test, tools/moving_grab_test.tscn (a sedan, a turning pickup, a box truck he hangs from, a moving barrier).
 - Escalators (Mo): the 7's long stairs down from the street, and the stairs down to it from the 1 2 3 and the Lexington line, are now pairs of escalators: down on the right, up on the left, a stainless balustrade between, black handrails, steps that move. Stand on one and it carries you, about a metre a second along the slope (walk on it to go faster).
 - The cape test passes again (it had failed every phase since the cape was draped over his shoulders), and three real faults it found are fixed: in the death fall the cape went 65 cm through the floor under him (anything pressed under the ground is now looked for from his neck's height down, not only 40 cm above it, and lifted back out, right beside him too as long as that doesn't lift it into him); in the jab, the flight and the death fall its top corners stretched to 19-28% past their limit (keeping the cape behind him and under his head ran after the stretch limit and pulled the corners; the limit now runs last and settles properly). The free cloth never goes into him. The part held on his shoulders lies on his skin and may cut its corners by a few millimetres as he moves (now measured, and limited to 5 mm); two known exceptions are written into the test: the jab shrugs the top of his shoulder up to 2 cm into it for about half a second, and the death fall 1 cm. Over 120 frames a second (a 144 Hz screen) the cloth skipped its step on some frames and the part on his shoulders trailed his skin, up to 8 cm into him in flight: it now takes a short step every frame. A new phase stands him on a roof's edge with the cape over the drop. At 144 fps two millimetre-level findings remain (a 3 mm touch where the free cloth meets the held part, 9 mm under the floor for a moment in the death fall); at 60, the test's own rate, everything passes.
-- Bis can catch a damaged airliner of the air traffic the way he catches Cactus 1549: fly in under its belly as it goes down, carry it, and land it on a LaGuardia runway (the city loves it), or drop it (the city doesn't). Narrowbodies, regional jets and light planes; widebodies and freighters are too heavy. An aircraft brought down now counts for the city striking back (Rampage) like two buildings collapsed. DEBUG > Spawn: an airliner going down to catch.
 
 <details>
 <summary>Older changes</summary>
 
 **23 October 2026**
 
+- Bis can catch a damaged airliner of the air traffic the way he catches Cactus 1549: fly in under its belly as it goes down, carry it, and land it on a LaGuardia runway (the city loves it), or drop it (the city doesn't). Narrowbodies, regional jets and light planes; widebodies and freighters are too heavy. An aircraft brought down now counts for the city striking back (Rampage) like two buildings collapsed. DEBUG > Spawn: an airliner going down to catch.
 - Gaps in the factory closed (Mo: the lift and the rooms' doors had open geometry). A new check looks round from every room, doorway and the lift at each stop for holes into the void, and found them all at the lab's vault door (open over its frame to the ceiling, either side of it, and past the ceiling's edge) and a slit along the corridor walls' feet; all closed, and the check now runs with check_warnings.
 - The factory's supercomputer room redone (Mo): a tall, empty-looking room (14 m, the lift goes deeper to reach it) with the supercomputer sunk in the floor under a hatch. Press its button and it comes up in stages: the base rises and stops, then the central pillar rises out of it; press again and it goes back down. You can ride it up. The room is light grey and white with cold mist on its floor, its ceiling clean but for a few cables dangling well apart, and it lights up as the supercomputer comes on (Mo).
 - The red, blurred view as heat vision overheats is off for now (Mo). The overheat itself is the same: 6 s white-hot and the beams cut out with a hiss for 4 s. DEBUG tab: "Heat vision: the red, blurred view" turns it back on to try.
