@@ -8,29 +8,51 @@ most useful thing you can do.
 
 ## [Download the newest version](https://github.com/molobarjo/Rooftops-builds/releases/latest)
 
-**https://github.com/molobarjo/Rooftops-builds/releases/latest**: under **Assets**, **Rooftops-windows.zip** for Windows, **Rooftops-linux.zip** for Linux. No account needed. The steps are just below.
+**[Rooftops-Launcher.exe](https://github.com/molobarjo/Rooftops-builds/releases/latest/download/Rooftops-Launcher.exe)** for Windows ([Rooftops-Launcher.x86_64](https://github.com/molobarjo/Rooftops-builds/releases/latest/download/Rooftops-Launcher.x86_64) for Linux): download it once, and it installs the game and every new version by itself. No account needed. Or the game alone, from **https://github.com/molobarjo/Rooftops-builds/releases/latest**: under **Assets**, **Rooftops-windows.zip** for Windows, **Rooftops-linux.zip** for Linux. The steps are just below.
 
 ## Getting the game (Windows)
 
-1. Open **https://github.com/molobarjo/Rooftops-builds/releases/latest** (no account needed).
-2. Under **Assets**, click **Rooftops-windows.zip** (about 140 MB).
-3. Open your Downloads folder, right-click the zip, choose **Extract All...**, then **Extract**.
-4. In the new folder, double-click **Rooftops.exe**.
-   Keep `Rooftops.pck` next to it: that's the game itself.
+The easiest way is the **Rooftops Launcher**: you download it once, and it installs the game and every
+new version by itself.
+
+1. Download **https://github.com/molobarjo/Rooftops-builds/releases/latest/download/Rooftops-Launcher.exe**
+   (no account needed). Put it wherever you like, on the Desktop for example.
+2. Double-click **Rooftops-Launcher.exe**. Windows warns about it the first time (see just below):
+   **More info**, then **Run anyway**.
+3. Press **Install** (the game is about 140 MB), then **Play**. Next time, just open the launcher and
+   press **Play**.
 
 **"Windows protected your PC"**: Windows says this about any program it doesn't know yet. Rooftops
 isn't signed (a certificate costs money), so it gets this warning. Click **More info**, then
-**Run anyway**. You only have to do it once per version.
+**Run anyway**. With the launcher you only see it once; it doesn't need to be run as administrator.
+
+The launcher keeps the game in your own folder (`%LOCALAPPDATA%\Rooftops`; you never need to open it).
+On Linux it is **Rooftops-Launcher.x86_64** from the same place (make it executable first: right-click,
+Properties, "Allow executing as program"); the game goes in `~/.local/share/rooftops`.
+
+**Without the launcher**: open **https://github.com/molobarjo/Rooftops-builds/releases/latest**, click
+**Rooftops-windows.zip** under **Assets**, right-click it in your Downloads folder, **Extract All...**,
+**Extract**, and double-click **Rooftops.exe** in the new folder (keep `Rooftops.pck` next to it: that's
+the game itself). On Linux it's **Rooftops-linux.zip** and **Rooftops.x86_64**.
 
 It needs a reasonably recent graphics card (roughly from the last eight years). The first launch takes
 a minute or two to build the city: the ROOFTOPS logo fills in as it goes.
 
 ## Getting a newer version
 
-Mo's changes are built into a new version automatically. In the start menu, the version you have is in
-the bottom right corner, next to **Updates**, which opens the download page. When a newer version is
-out, the button turns gold and says **Update available**: download it the same way and delete the
-old folder. Your saved game and settings are kept (they live elsewhere, see below). **Changelog** in
+Mo's changes are built into a new version automatically.
+
+- **With the launcher**: open it. When a newer version is out it says so, shows what's new, and the
+  **Update** button turns gold: press it, wait for the bar, then **Play**. Tick **Download new versions
+  by themselves** and it won't even ask. If the internet is down, you can still play the version you
+  have. A download that stops carries on where it left off (press **Retry**), and the version you had
+  stays until the new one has started properly. The launcher keeps itself up to date too.
+- **Without it**: in the start menu, the version you have is in the bottom right corner, next to
+  **Updates**, which opens the download page. When a newer version is out, the button turns gold and
+  says **Update available**: download it the same way and delete the old folder. (Started from the
+  launcher, the button says to press **Update** in the launcher instead.)
+
+Your saved game and settings are kept either way (they live elsewhere, see below). **Changelog** in
 the menu lists what has changed. Anything new since the last version you played is marked in gold.
 
 ## The start menu
@@ -119,6 +141,10 @@ Delete `save.cfg` there to start over completely.
 
 What has changed, newest first (the game's own **Changelog** shows the same).
 
+**26 October 2026**
+
+- A launcher for the family: Rooftops Launcher, one program to download once (https://github.com/molobarjo/Rooftops-builds/releases/latest/download/Rooftops-Launcher.exe, Linux too). It shows the installed and the newest version and what's new, and has two big buttons: Play, and Install/Update when a newer build is out, which downloads it (picking up where it stopped if the connection drops), checks it against the release's checksums, unpacks it beside the old one and switches; the old one goes once the new one has started, and a new one that won't start can be rolled back. Offline, the installed version still plays. Optionally it downloads new versions by itself, and it updates itself. Every release now carries the launchers and a SHA256SUMS. The game started from it points its Updates button at the launcher instead of the browser. Saves are untouched (they live in Godot's own folder).
+
 **25 October 2026**
 
 - Bis on the statue's body (Mo: "use the statue, rig it for Bis's body"): the low-poly statue from the neck down to his feet, with his own head (the man's face) and his own hands (fingers that still gesture), on Bis's own skeleton, his arms on the statue's own joints (on the PSX Bis's, low and wide, the deltoids slid down his arms; Mo: "the deltoids!"), so every move plays on him as sculpted. Not smoothed (Mo: "don't smooth the shoulders, torso and arms!"): shaded flat on the shoulders, torso and arms so the muscles' facets show, smooth elsewhere. Cut where Mo's markup of Bis says, and no seams (Mo): the statue welded onto his own head and hands point for point, a closed body. A texture layout of his own, made for painting (a strip a limb, a band round his trunk), and his suit painted on it by the same rules as before (bis_statue_body.png, the worn one too; tools/protagonist/build_statue_bis.py, tools/paint/paint_bis.py). The PSX Bis he was is kept (tools/protagonist/bases/), with Mo's markup.
@@ -151,13 +177,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - RoboCop rebuilt from Mo's markup, with moves of his own (Mo: "try your hand at animating him"). His figure is Mo's model cut where Mo painted it in Model markup (his right side mirrored from the left Mo painted): every part a rigid plate on its bone, each thinned on its own to the PS1 look so it ends in a clean edge, over a dark suit that bends at the joints, about 2,600 triangles and one small baked texture. He moves as a machine: at his post he stands dead still and only his head snaps round, scanning the room; he walks heavily, legs nearly straight, with a small turn at the waist to balance the step (Mo's notes); and he draws from the holster in his thigh and aims straight-armed. The moves are Pose studio moves (robocop_idle, robocop_walk, robocop_draw_aim), and RoboCop is in the studio's list, so Mo can open them and drag any pose he wants changed.
 - The recording booth tunes each voice: under the takes, a Voice row with pitch, size (the voice's body: down for a bigger, deeper man, up with the pitch for a woman), warmth and brightness, and presets (a bit or much deeper, a bit or much higher). For the city's people, whose one recording becomes two men's and two women's voices, the men's and the women's are tuned apart. And a Robot: RoboCop (a metal ring in the helmet, a faint electronic buzz, a speaker grille) or J.A.R.V.I.S. (smooth, a soft digital double, a clean echo), with how much of it; RoboCop's and J.A.R.V.I.S.'s own lines have theirs on already. H plays it through the game's processing straight away; the settings are kept with the line and used at the next sync, on lines already done too.
 - Every line of dialogue is in the recording booth, ready to read: Metro News 7's reporter and the paparazzi, whose speech bubbles had no way to be voiced, are now lines of their own (33 of them, with how to say each; the reporter's recording becomes a woman's voice). Her opening no longer names the street ("live at the scene") and a Daily Planet story is "already front-page news", so every word can be recorded in advance. The booth's Voice row gains Shaky (an old voice's waver) and an Older preset. 327 lines, 70 to record.
-- Two free voice engines in the voice processing, picked per line in the booth's Voice row (Engine): Praat's "Change gender" (the phoneticians' tool: it measures the voice's pitch and moves pitch and the voice's body apart, the most natural woman's voice from Mo's) and the WORLD vocoder (the voice split into pitch, throat and breath and rebuilt), beside the rubberband the game has used so far, still every folder's default. H compares them on a line; a whole folder can switch once Mo has chosen.
 
 <details>
 <summary>Older changes</summary>
 
 **25 October 2026**
 
+- Two free voice engines in the voice processing, picked per line in the booth's Voice row (Engine): Praat's "Change gender" (the phoneticians' tool: it measures the voice's pitch and moves pitch and the voice's body apart, the most natural woman's voice from Mo's) and the WORLD vocoder (the voice split into pitch, throat and breath and rebuilt), beside the rubberband the game has used so far, still every folder's default. H compares them on a line; a whole folder can switch once Mo has chosen.
 - KITT from Mo's model of him (Mo: the next iconic car; his kitt_knight_rider.zip, a clean .blend: one body mesh on named materials and its four tyres, 5,400 triangles in the game) in place of the loft traced off the side photo: the Trans Am's shovel nose with the lamp lids and the scanner sweeping in the model's own slot, the louvred lamp grid, the long doors, the hood with its bulge, the glass hatch and the T-tops cut along the model's seams and opening as before; the builder's "flip" for a model whose faces wind the other way round.
 - The loading screen keeps drawing (Mo's logs: frames of 6 to 11 s, "not responding" on his desktop): the subway's planning is spread a station at a time (Times Sq-42 St alone was 4 s), the landmarks go up one a frame and only into the scene once on their site (the X-Mansion, built at the origin among Midtown's shapes, cost the physics step 3-4 s), the piers a pier a frame with their collision put into the physics world a slice a tick, the boats with no collision mask, the X-Mansion's and the lifts' moving parts likewise, the stand-in skyline a chunk at a time, the shader warm-up's look through the scene a slice a frame, the music no longer seeks every silent layer at once (200-370 ms), the boats come a boat a frame, the els' bodies a frame each, the traffic's signals and poles a slice a frame, the 35-odd systems of "Running the trains" a frame each, and the island's collision at most 480 shapes a frame. check_warnings.sh loads the game headless and fails on any loading frame over 2.5 s of script time here (about 1.7 s on Mo's PC). Still over a second here: the Empire State's build (1.5 s), the first chunk built on the main thread (1.1 s), one frame of "Running the trains" (1.1 s).
 - The 47-second freeze (Mo's log: hovering as Bis, separate render thread on) and the thousands of "causing RenderingServer synchronizations" warnings: the game kept asking the render thread for things it had made itself, and each ask waits for a whole frame to finish drawing. Parked cars were read back out of their MultiMesh one by one (Bis's lift aim, the Men in Black parking, every blow's "which car is here") - now each chunk keeps its cars' places and paint in plain arrays; shader materials were copied with duplicate() (a subway station's map took 228 s in one frame here) - now MaterialCopy; bodies and landmarks read each mesh back again and again - now MeshArrays, once a session; the shockwave marker's spin and the police lightbars kept their own values. tools/readback_check.py (in check_warnings.sh) fails on any new read-back that doesn't say why it's fine, and the check runs the game a second time with the separate render thread, failing on any sync warning. The freeze watch now says where a freeze is stuck (physics, scripts, deferred calls or drawing, the last system to finish and any wait it's in), again every 10 s, and each slow frame's split - and that caught the other half of the freeze here, in Safe mode too: a frame drawn waits on the occlusion culling's commit, which Godot queues in its worker pool's low-priority lane - the lane the game filled with its own long work (city chunks, kits, shops, banks, towers), and found jammed, every worker asleep, after a while of play. The game's work now goes through BackgroundJobs (as many at once as before, in the normal lane; a job still queued when it's needed is run on the spot instead of waited on), so the lane is Godot's own again. The 26 empty-image errors are Godot's own font cache under the separate render thread too (a plain Label changing text makes them). So: back to Safe (the game now says so in the log when it's on). The "[pose] a hand ... falls short" notes: one line a clip, once a session.
