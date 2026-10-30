@@ -151,6 +151,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **30 October 2026**
 
+- Smoother destruction, step 4 (Mo's rule): a cut too steep (over 50 degrees) or too low (taking off more than half the building) brings the whole building down on itself, sinking into its lot under the dust, instead of a huge top sliding off into the next street for the physics to work out. Gentler, higher cuts still slide off. The numbers are STEEP_DEGREES and DOWN_SHARE at the top of building_slicer.gd.
 - Every walk-in door works like the shops' now (Mo: "all doors"): the street doors of the fourteen landmark towers (Empire State, Chrysler, Woolworth, the WTC, Wayne Enterprises, Gotham City Hall, the Flatiron, Titans Tower, Avengers Tower, the Bugle, the Planet, the Baxter Building, the Avengers Mansion, Nelson & Murdock), the hideout's front door, the banks (their doors used to stand open; now real doors), police precincts, hospitals (their glass doors solid now), the MIB headquarters, the Sanctum, the Ghostbusters' firehouse (both doors) and the X-Mansion's entrance stay shut until he opens them: Use at the door or walk into it, the fixed camera, his hand on the door (or the glass sliding apart), first person inside. The officers, the MIB agents and Ecto-1 still open their doors for themselves; the doors between rooms inside still swing open as he comes. Left out: the FDNY engine bays (truck doors, no door for people), and places with open doorways and no door (LaGuardia, Roosevelt Island, the El stations, the subway, Grand Central). In the hideout he can still climb into the cave's vent in first person. In first person his eyes now ease up and down a stair's treads instead of hopping, and a lift ride with him in it (the towers', the MIB's) is cut short: a dip to black and he is at his floor, facing the doors. (The X-Mansion's underground is still over the shoulder, its lift the full ride: a later step.)
 - Smoother destruction, step 3: the road graph the fire crews, ambulances and police route over is built while the city loads, on the traffic's worker thread, instead of the first time a vehicle is called out (the ambulances even built a second copy of their own). In the collapse run the worst ambulance frame went from 0.82 s to 0.30 s and the police's from 0.66 s to 0.46 s; what is left is the route search itself, each time one is sent.
 - No more stray sun discs in the sky (from Mo's "two moons?"): Godot's sky drew one for the indoor rooms' own light (tower_interior.gd), bright through the clouds 62 degrees up all night (and a second sun beside the real one by day), and the debug ground's fill light did the same by day. Both are now lights only, never drawn in the sky; the moon is NightSky's pixel moon alone. (The low bright dot in Mo's picture was an airliner's landing lights on its way into LaGuardia.)
@@ -190,13 +191,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 **28 October 2026**
 
 - The boost blurs the edges of the screen (Mo's idea: it hides the simplified buildings rushing past). A smear outward from the middle, where he stays sharp, from the second tap (70 m/s) to full at 600 m/s, only with the camera behind him, like the streaks.
-- Bis no longer "does burpees" flying through a collapse (Mo). Flight ended whenever he was sinking and anything was under him, a falling building top or a tumbling chunk included, so he kept landing on them and taking off again. A loose piece still on its way down is not ground to land on any more; once at rest it is.
 
 <details>
 <summary>Older changes</summary>
 
 **28 October 2026**
 
+- Bis no longer "does burpees" flying through a collapse (Mo). Flight ended whenever he was sinking and anything was under him, a falling building top or a tumbling chunk included, so he kept landing on them and taking off again. A loose piece still on its way down is not ground to land on any more; once at rest it is.
 - Terrain3D kept for the terrain and the waterfronts (Mo downloaded it with TerraBrush from Godot's asset library). TerraBrush is taken out (it needs the .NET build of Godot), and so is Terrain3D's demo; the warnings check leaves the add-on's own code out, so it passes again.
 - The minimap follows Bis at full boost again (Mo: it stopped moving when he flew fast). Each boost tap slows the world's clock while he goes on at full speed, and the radar redrew on the world's clock, so at the top taps it all but froze; it now runs on real time.
 
