@@ -152,6 +152,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **1 November 2026**
 
+- He stands still now (Mo: "his legs kind of jittery while waiting in the superhero pose", "always stays upright"). Three causes, each fixed where it was: the legs' re-solve under his feet took the knee's way from the clip's own bend, which Bis's straight-legged hero stance hardly has, so his knee flipped side to side by 3 cm as he breathed (now led a little over his toes, natural_motion.gd); each foot felt for the ground with one ray at the ankle, so on a kerb's edge, a stair's nosing or a roof's edge it found the high side one frame and the low side the next and threw the foot 15 cm up and down (now the highest ground under the heel-to-ball of the sole, held a moment before it changes while he stands, and the foot eased onto a new height on a spring; the same for the feet's tip onto the floor, foot_floor_modifier.gd); and Bis's folded-arms fidget stood with the man's feet 18 cm apart, so his feet slid in and back out under him every time (it now keeps the hero stance's legs: BisPoses.planted()). His body never tilted (checked). tools/idle_jitter_check.sh stands both forms on 21 grounds at 60 and 144 frames a second and fails on any shake, snap or tilt; the pose audit's --check runs it.
 - The texture library: all 182 free textures from the picker (Poly Haven, CC0: stone, marble, wood, brick, tiles, plaster, concrete, metal, cloth) are kept in the game, at the PS1 look, ready to swap in. A room can draw any of them by name (TowerInterior.lib(&"herringbone_parquet")), and TowerInterior.SWAPS puts one in place of any of the rooms' own tiles everywhere at once (TILE_MARBLE: &"white_marble"), to try it and take it back. The jointless ones are shifted and blended so their repeat never shows; bricks, tiles and planks repeat as laid. More can be added by name (tools/texture_library/).
 - The cameos' props: each holds theirs in the right hand, the fingers closed round it (Doc's DeLorean remote, Jonas's burning torch, Gator's bowie knife, Woody's box of chocolates, the Mauros' wrench and plunger, Elwood's briefcase, the Terrapins' katana, sai, staff and nunchaku, and more), and Rocco punches two carcasses on a meat rail (docs/CAMEOS.md).
 - Small roads always accessible (Mo): fire trucks no longer get wedged leaving a scene downtown. Their course to a fire along a lane-less street stops at the kerb before it, not up on the sidewalk under the shops' awnings; a rig that can't get out keeps the way it came behind it and backs up along it, further each time it is stuck in the same place; and none takes a way home that starts by turning round where it stands (it backs away and tries again instead). Courses never turn round on the spot where a street ends at a T (the corner is rounded), and a radio car pulling in at a call whose spot faces the other way pulls in ahead of itself rather than swinging round. tools/fire_truck_clearance_check.sh --kinks looks every house's courses over for that.
@@ -185,10 +186,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 **31 October 2026**
 
 - Opal glass on the vehicles: the cars' windows (in the car's own space, so it rides with it; a painted page's glass colour kept under it), the buses' glass over the livery, and the subway's and the Els' windows (clear: the inside only through the opal's thin share, on a dither; frosted: the opal over the blur), lit at night.
-- The police Crown Vic and the MIB LTD drawn right again: since the cars were rebuilt with their pages (Oct 26) every face of theirs had been built as glass (the model's texture wasn't read, so every face came out white, the colour of its glass's streaks), so they showed as dark slate glass all over. The builder now reads the texture; both cars rebuilt (paint, chrome, lamps, the NYPD's livery), their collision baked again.
 
 <details>
 <summary>Older changes</summary>
+
+**31 October 2026**
+
+- The police Crown Vic and the MIB LTD drawn right again: since the cars were rebuilt with their pages (Oct 26) every face of theirs had been built as glass (the model's texture wasn't read, so every face came out white, the colour of its glass's streaks), so they showed as dark slate glass all over. The builder now reads the texture; both cars rebuilt (paint, chrome, lamps, the NYPD's livery), their collision baked again.
 
 **1 November 2026**
 
