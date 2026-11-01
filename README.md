@@ -152,6 +152,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **1 November 2026**
 
+- The cameos' props: each holds theirs in the right hand, the fingers closed round it (Doc's DeLorean remote, Jonas's burning torch, Gator's bowie knife, Woody's box of chocolates, the Mauros' wrench and plunger, Elwood's briefcase, the Terrapins' katana, sai, staff and nunchaku, and more), and Rocco punches two carcasses on a meat rail (docs/CAMEOS.md).
 - Small roads always accessible (Mo): fire trucks no longer get wedged leaving a scene downtown. Their course to a fire along a lane-less street stops at the kerb before it, not up on the sidewalk under the shops' awnings; a rig that can't get out keeps the way it came behind it and backs up along it, further each time it is stuck in the same place; and none takes a way home that starts by turning round where it stands (it backs away and tries again instead). Courses never turn round on the spot where a street ends at a T (the corner is rounded), and a radio car pulling in at a call whose spot faces the other way pulls in ahead of itself rather than swinging round. tools/fire_truck_clearance_check.sh --kinks looks every house's courses over for that.
 - No wandering bits on the body sheets (Mo's markup): Karen Page, Jameson, the bank guard, Matt Murdock and Lois Lane laid out again following the parts he painted in Model markup. Each part is one piece now, cut on the body down real seams (over the shoulders, down the sides, under the crotch, each arm down its inside and outside, each leg down its inside) and flattened whole: each hand and foot one piece slit open like a glove or a shoe pattern, the armpits' flaps and the crotch drawn in, nothing loose under the torso. His painting and every template layer carried over texel by texel; Matt's left heel painted shoe black and Jameson's right shoulder shirt white (Mo). The templates name each part on its piece (his markup's names; FRONT / BACK on the arms). uv_layout_check.py fails a marked-up model with a part cut into more pieces than it has on the body.
 - sync.sh no longer looks frozen while it downloads (Mo): GitHub's downloads and uploads show as an ASCII progress bar, Downloading [#########-----------]  45%  120.00 MB  2.10 MB/s, redrawn in place in Konsole and in the Rooftops tools launcher, with the unpacking after it; one line left per download or upload when it's done.
@@ -188,10 +189,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 **1 November 2026**
 
 - Cameos, batch 2 of 3 (docs/CAMEOS.md): Dwayne and Barth by their car in the East Village at night, Tara Loft on Fort Tryon Park's hill by the Cloisters, Ryo in Chinatown, the Mauro Brothers at roadworks on First Avenue (cones, an open manhole), the Kansas Kid and Mr. Miyogi on the Hudson at dusk, Juicebug at a headstone in Lower Manhattan (only once the man has walked past it three times), Tony Mandolino strutting on 86th Street at night, the Dark Knave crouched on a Park Avenue roof at night. Each with its lines, Bis's reaction, its film in the credits book (six more) and its portrait. New mesh pieces: caps with a visor and a domed crown, the Knave's cowl ears, fuller hair. Cameos now stand on the street or the parks' hills, never on a ledge or a stoop.
-- The play log's hitches now say which systems took the time (the loading session's ask, for Mo's slow frames hovering over upper Manhattan): each carries the frame's three biggest systems by script time (top, from FreezeWatch), and the report counts which system was the biggest most often. Old sessions are deleted on a worker thread as a new one begins (it was up to 65 ms on the main thread with many snapshots).
 
 <details>
 <summary>Older changes</summary>
+
+**1 November 2026**
+
+- The play log's hitches now say which systems took the time (the loading session's ask, for Mo's slow frames hovering over upper Manhattan): each carries the frame's three biggest systems by script time (top, from FreezeWatch), and the report counts which system was the biggest most often. Old sessions are deleted on a worker thread as a new one begins (it was up to 65 ms on the main thread with many snapshots).
 
 **31 October 2026**
 
