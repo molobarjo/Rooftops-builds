@@ -71,7 +71,7 @@ the menu lists what has changed. Anything new since the last version you played 
   beating keeps him hurt longer). Also in **Options > Gameplay**.
 - **Continue**: back where you saved. The game saves by itself every two minutes and when you quit, and
   you can save from the pause menu (Esc, **Save game**), or sleep on the cot in his hideout (till dawn,
-  or till dusk by day).
+  or till dusk by day). Saved over in Brooklyn, Queens, the Bronx or Staten Island, you start there again.
 - **Options**: controls (change any key or button, mouse and stick camera speed, invert up and down,
   tap or hold to sprint), sound and graphics. If the game is slow, pick a lower graphics
   preset there.
@@ -152,6 +152,7 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 
 **1 November 2026**
 
+- Saving in the boroughs (Mo: "start in place"): save or quit over there and Continue puts him back where he was, in the boroughs, same spot, form and hour, with Manhattan parked behind as after a crossing (so the bridges, subway, cab and ferry back all work). Quit to title from the boroughs no longer leaves the old Manhattan in memory. (bridge_switch_check --save-in-place checks it.)
 - No more false start of the way back flying over a bridge: Bis 40 m over a deck counted as on the bridge, started its way back and dropped it the moment he drifted off its line, then started the air's. Now higher than 15 m over a deck he is flying, not on the bridge, and goes the air's way (the veil) straight away, both ways across. (bridge_switch_check --back --over-deck=40 checks it.)
 - The cab back (the way back as the way in, Mo): at the tunnels' borough ends (Red Hook, Long Island City), as the man by the cab stand, E "Take a cab to Manhattan": pick anywhere in Manhattan he has seen on the map, ride in the back seat through the tunnel, handed back to Manhattan on the way, and out at the kerb nearest the spot. (No hailing in the boroughs yet: they have no traffic of their own; a stand instead.)
 - The subway back (the way back as the way in, Mo): at Borough Hall, Flushing - Main St or Bedford Park Blvd, as the man by the station, E "Take the train to Manhattan" opens the map on Manhattan's stations (those he has found, and home). He rides the same car through the dark tunnel; Manhattan builds round the station he is going to, he is handed back under way, and he comes up its stairs with the clock on by the ride.
@@ -185,13 +186,13 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - The fake room seen through a shop's window is now its real room (Mo): the same floor (its tile, colour and pattern scale, at its height), the same width and depth, so walking from the window to the open door the floor carries on instead of changing (ShopKits.with_room(), ShopInteriors.floor_index()).
 - The suit in the hideout's glass case stands on his own body now (Mo): Bis's body, the statue's, headless like a dress form, in the suit and torn cape worn out as he came through the portal in them, stood as he stands. It comes and goes with the cave (built with it), so it costs nothing elsewhere.
 - Mo's own painted sheets moved to the standard layout, his painting carried over texel by texel with every layer of his templates: the man (shirt, jacket, torn jacket, the jacket's raise mask, the old PSX Bis suits), Reed Richards and MIB agent 04. The man's builder keeps the layout on a rebuild, his sculpted shape free to change. Reed Richards wears the Fantastic Four's suit (Mo's reference: navy, the black V, collar, the "4" on his left chest, boots; gloves painted, hidden), as layers over Mo's paint.
-- Loading, stage 3: no more pops. The detailed version of a building (carved windows, fire escapes, signs, roof clutter) no longer appears whole in one frame: each part fades in, dithered, as he comes into its range, and one built while it is already in view fades in over half a second. The stand-in boxes the far blocks wear until their real buildings are built dissolve away instead of vanishing. The detailed buildings are built soonest-reached first: ahead of him when he flies fast, the nearest when he walks.
 
 <details>
 <summary>Older changes</summary>
 
 **31 October 2026**
 
+- Loading, stage 3: no more pops. The detailed version of a building (carved windows, fire escapes, signs, roof clutter) no longer appears whole in one frame: each part fades in, dithered, as he comes into its range, and one built while it is already in view fades in over half a second. The stand-in boxes the far blocks wear until their real buildings are built dissolve away instead of vanishing. The detailed buildings are built soonest-reached first: ahead of him when he flies fast, the nearest when he walks.
 - Loading, stage 4a: a memory budget, so the game fits 8 and 16 GB PCs (the whole of Manhattan and what is across the water took 6.7 GB). Options > Graphics > Memory: Auto (by the PC's memory, the default), Low (8 GB: Manhattan kept built 2 km round him), Medium (16 GB: 4 km), High (32 GB+: the whole island). Further off, the blocks are their grey stand-in boxes; the blocks he leaves behind go back to boxes and are built again as he comes back, and a block he has changed (a car dented, a lamp knocked down) is kept. A small PC also loads faster: it only builds what it keeps. The load times file now records the PC's memory and how much the game used.
 - sync.sh now finds the game's start timings with Godot from Flathub too (its user folder is under ~/.var/app, not ~/.local/share): Mo's load times reach Claude from his next sync.
 - The load times now say what each of the worst frames was: when, what the city was still building, and how long each part of the frame took and its biggest systems (so a freeze in play on Mo's PC names its cause).
