@@ -243,6 +243,10 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - Quitting no longer warns of 7 leaked textures: it was the X-Jet hangar's reflection probe (a Godot bug - a probe that has rendered once leaks them at quit), not the crowd. The probe is now made only while the camera is within 170 m of the hangar, so a run that never visits the X-Mansion quits clean.
 - Downtown's fire trucks round their old lane-less corners on a line fitted to the rig, as at the grid's junctions (their own side, the middle or the far side, sooner or later, the whole rig kept on the road kerb to kerb), and the two rigs of a house no longer back in together on a narrow street: the second waits short of the door, out of the street the first backs in across, till the first is in. Home along downtown's two-way streets they stop past the door the way they came (they used to come down the street the other way and stop short of the door, backing up 100 m), never turning round in a crossing to get there, and never set off by turning round where they stand. A rig backing in from a narrow street can also swing wide from the far side, as it came out. The robbers' getaway car to the boat waits for a rig in its way instead of driving through it.
 
+**1 November 2026**
+
+- A lane blocked right at a station's door (a crash, a fire scene) no longer reads as "[courses] stale": the station's way out (or home) is then searched afresh, like anything else lying in the street, instead of the tree being taken for a moved station.
+
 **30 October 2026**
 
 - A rare crash fixed: the city set aside (or the game quit) while the Empire State's geometry was still being worked out on a worker thread let the worker read a landmark already freed; now the landmarks wait for it as they go. And the refitted crowd's far cut-outs rendered again from Mo's new fits, the refitted bank and police models' collision baked.
