@@ -1,0 +1,99 @@
+# Copied to molobarjo/Rooftops-builds/.github/ISSUE_TEMPLATE/ by
+# tools/export/publish_builds_readme.sh; edit it here, never in the builds repository.
+name: "🐞 Un problème / A bug"
+description: "Quelque chose ne marche pas dans le jeu ? Racontez-nous. / Something wrong in the game? Tell us."
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de prendre le temps ! Pas besoin d'être technique : racontez simplement ce que vous avez vu.
+        *Thank you for taking the time! No need to be technical: just tell us what you saw.*
+
+  - type: textarea
+    id: what
+    attributes:
+      label: "Que s'est-il passé ? / What happened?"
+      description: |
+        Ce que vous avez vu, et ce que vous attendiez à la place.
+        *What you saw, and what you expected instead.*
+      placeholder: "Ex. : le personnage est passé à travers le toit. / E.g. the character fell through the roof."
+    validations:
+      required: true
+
+  - type: textarea
+    id: doing
+    attributes:
+      label: "Que faisiez-vous juste avant ? / What were you doing just before?"
+      description: |
+        Où vous étiez dans le jeu, quelles touches vous appuyiez, en homme ou en Bis...
+        *Where you were in the game, which keys you were pressing, as the man or as Bis...*
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version du jeu / Game version"
+      description: |
+        Elle est écrite en bas à droite du menu de départ (ou dans le lanceur : « Installed: v... »), par exemple `v2026.10.16.1432 (4ba034f)`.
+        *It is written in the bottom right corner of the start menu (or in the launcher: "Installed: v..."), like `v2026.10.16.1432 (4ba034f)`.*
+      placeholder: "v2026.10.16.1432 (4ba034f)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: system
+    attributes:
+      label: "Ordinateur / Computer"
+      options:
+        - "Windows"
+        - "Linux"
+        - "Je ne sais pas / I don't know"
+    validations:
+      required: true
+
+  - type: input
+    id: gpu
+    attributes:
+      label: "Carte graphique, si vous la connaissez / Graphics card, if you know it"
+      description: |
+        Facultatif. Ex. : NVIDIA GeForce GTX 1060, AMD Radeon, Intel...
+        *Optional. E.g. NVIDIA GeForce GTX 1060, AMD Radeon, Intel...*
+
+  - type: dropdown
+    id: crash
+    attributes:
+      label: "Le jeu a-t-il planté ou s'est-il figé ? / Did the game crash or freeze?"
+      options:
+        - "Non, il a continué / No, it kept going"
+        - "Il s'est fermé tout seul / It closed by itself (crash)"
+        - "Il s'est figé / It froze"
+    validations:
+      required: true
+
+  - type: textarea
+    id: log
+    attributes:
+      label: "Le fichier journal (log) / The log file"
+      description: |
+        Très utile si le jeu a planté ou s'est mal comporté. Ouvrez ce dossier :
+        *Very useful if the game crashed or behaved strangely. Open this folder:*
+
+        - **Windows** : appuyez sur Windows+R, collez ceci et appuyez sur Entrée / *press Windows+R, paste this and press Enter*:
+          `%APPDATA%\Godot\app_userdata\Rooftops\logs`
+        - **Linux** : `~/.local/share/godot/app_userdata/Rooftops/logs`
+        - **Linux (Flatpak)** : `~/.var/app/org.godotengine.Godot/data/godot/app_userdata/Rooftops/logs`
+
+        **Glissez le fichier `godot.log` le plus récent dans cette case.** (Les plus anciens s'appellent `godot` suivi d'une date.)
+        ***Drag the newest `godot.log` into this box.** (Older ones are called `godot` followed by a date.)*
+      placeholder: "Glissez godot.log ici / Drag godot.log here"
+
+  - type: textarea
+    id: media
+    attributes:
+      label: "Capture d'écran ou courte vidéo (facultatif) / Screenshot or short video (optional)"
+      description: |
+        Glissez une image ou une vidéo de téléphone dans cette case.
+        *Drag a picture or a phone video into this box.*

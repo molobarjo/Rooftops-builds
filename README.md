@@ -128,7 +128,9 @@ inverted up and down, and **Show the pad** draws your controller with what each 
 
 ## Found a bug? Tell Mo
 
-Send Mo:
+**Report a bug** (or share an idea) here, in a short form that asks for everything below:
+https://github.com/molobarjo/Rooftops-builds/issues/new/choose (a free GitHub account is needed).
+Or send Mo:
 
 1. **The version**: bottom right of the start menu, like `v2026.10.16.1432 (4ba034f)`.
 
@@ -142,7 +144,8 @@ Send Mo:
    %APPDATA%\Godot\app_userdata\Rooftops\logs
    ```
 
-   Send the newest `godot*.log` file in that folder (or all of them).
+   Send the newest `godot.log` file in that folder (older ones are `godot` followed by a date).
+   On Linux the folder is `~/.local/share/godot/app_userdata/Rooftops/logs`.
 
 Your save and settings are in the folder above that one (`%APPDATA%\Godot\app_userdata\Rooftops`).
 Delete `save.cfg` there to start over completely.
@@ -151,10 +154,16 @@ Delete `save.cfg` there to start over completely.
 
 What has changed, newest first (the game's own **Changelog** shows the same).
 
+**2 November 2026**
+
+- The family can report a bug or share an idea on the public builds page: two short forms, in French with English beneath (what happened, the version from the start menu's corner, Windows or Linux, crash or freeze, and the newest godot.log dragged in, with its folder spelled out), at https://github.com/molobarjo/Rooftops-builds/issues/new/choose. Kept in tools/export/builds_issue_templates/ and published with the front page; PLAYING.md points to it.
+
 **1 November 2026**
 
+- Roosevelt Island's middle: the buildings' river sides had a blank ground floor and no way in. The 1970s complexes (Rivercross, Island House, Westview, Eastwood), Southtown's Riverwalk wings and Manhattan Park's towers now stand on a plinth off the street and have a door out onto the riverside, and the hedges along their backs leave a gap in front of each door. tools/roosevelt_south_preview shoots the middle too.
 - The checks before a merge cost what the change needs: tools/check_warnings.sh --changed runs the compile pass (twenty seconds) and only the checks whose area the diff touches, by a table of paths in the script (a doc change: the compile pass alone; a character model: the model check and the sheets' layout, about a minute; the responders: the block sim; a pose: the pose audit; the heavy city runs only for the world, streaming and loading), and the whole set, which took sessions up to fifty minutes, when it touches an autoload, the project or a core script. Small, low-risk changes take a fast lane: that check, then merged at once. The full run is nightly on main on GitHub's servers, the block sim and the pose audit now in it too; when it breaks it opens one issue, "Nightly check failing", with the failing lines. And the family's builds are published only from there (Mo: "only after a stable checked build"): a good night builds that commit, smoke-tests it and publishes it; a push to main is only a dry run now. At most one new version a night.
 - No more stutter at a ledge (his play log: "player" was 3.8 s of hitches in his first 3 minutes, 100 to 430 ms every time he caught a ledge, pulled up from a hang or wall-ran up to one). The moves built against the real ledge (the catch, the hang, the climb, the wall run, every climbing and parkour move) were solved whole in the frame they started. Now: the solve itself is about 2.7 times cheaper with exactly the same poses (self_contact.gd: the same readings, each worked out once instead of over and over); a move starts from its first keys and the rest are solved just ahead of where it plays, a few milliseconds a frame (PoseSolveJob); the hang after the catch is solved while the catch plays; the climb up from a ledge is solved while he hangs there; and a move solved once is kept, so the same ledge again costs nothing. Here a ledge's move went from 20-150 ms in its first frame to a few milliseconds a frame (the heaviest whole frame 17 ms, in the cloud machine, which ran the old solve 2-3 times faster than his PC); how the moves look is unchanged (tools/pose_solve_check.tscn checks every frame against the whole move solved at once).
+- The block sim is steady at 11/11, the same run after run: it is seeded (every random number in it, and the crowd's film-quote lines on game time, not the clock), and its three misses fixed where they came from. A radio car sent on a call no longer counts itself as something in the street in front of its precinct (it never left); cars pulling over for a siren stay clear of the station's cars parked nose-in at the curb; a fire truck coming home beside another emergency vehicle keeps to its lane rather than swinging out and locking with it in the turn; and a car keeps out of a firehouse's keep-clear box unless there is room to get right through it (not in behind a queue, on green or not).
 - Inwood Hill Park's hills rebuilt for its new outline (its east edge moved 14 m west since the relief was made): only Inwood's cells changed, by a quarter metre at most along that edge; Fort Tryon, Highbridge, the X-Mansion's hill, the marsh and the hideout's level ground as they were. build_parks.sh --only=PARK redoes one park's relief alone.
 - Lucius Fox recast on Mo's pick, the pack's Character 13: an older man, bald and clean-shaven (Mo: not a bearded figure), his glasses and grey three-piece suit painted on again, his fit started from Mo's own fit of that body. Mo's painting of his old head is kept aside (named/paint/retired/): it was laid out on the old head and doesn't carry over. And agent J of the Men in Black gets the truly flat crown, as Jameson's (Mo's tick).
 
@@ -181,6 +190,12 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 - Small roads always accessible (Mo): fire trucks no longer get wedged leaving a scene downtown. Their course to a fire along a lane-less street stops at the kerb before it, not up on the sidewalk under the shops' awnings; a rig that can't get out keeps the way it came behind it and backs up along it, further each time it is stuck in the same place; and none takes a way home that starts by turning round where it stands (it backs away and tries again instead). Courses never turn round on the spot where a street ends at a T (the corner is rounded), and a radio car pulling in at a call whose spot faces the other way pulls in ahead of itself rather than swinging round. tools/fire_truck_clearance_check.sh --kinks looks every house's courses over for that.
 - No wandering bits on the body sheets (Mo's markup): Karen Page, Jameson, the bank guard, Matt Murdock and Lois Lane laid out again following the parts he painted in Model markup. Each part is one piece now, cut on the body down real seams (over the shoulders, down the sides, under the crotch, each arm down its inside and outside, each leg down its inside) and flattened whole: each hand and foot one piece slit open like a glove or a shoe pattern, the armpits' flaps and the crotch drawn in, nothing loose under the torso. His painting and every template layer carried over texel by texel; Matt's left heel painted shoe black and Jameson's right shoulder shirt white (Mo). The templates name each part on its piece (his markup's names; FRONT / BACK on the arms). uv_layout_check.py fails a marked-up model with a part cut into more pieces than it has on the body.
 - sync.sh no longer looks frozen while it downloads (Mo): GitHub's downloads and uploads show as an ASCII progress bar, Downloading [#########-----------]  45%  120.00 MB  2.10 MB/s, redrawn in place in Konsole and in the Rooftops tools launcher, with the unpacking after it; one line left per download or upload when it's done.
+
+<details>
+<summary>Older changes</summary>
+
+**1 November 2026**
+
 - Text fits its surface (Mo): the tower audit now checks every sign, plaque and name lies on what it is written on. It found J. Jonah Jameson's and Perry White's door signs inside their glass walls (hidden), Wayne's two gold Ws into the ceilings, Chrysler's LOBBY DESK and the Empire State's INFORMATION off their round desks (on brass plates now), Rand's K'UN-LUN hanging between the gate's beams, and Grant's Tomb's names and placard running off their stones and plate - all fixed. And no two surfaces that meet share a texture (Mo: "it gets ugly"): Grant's Tomb's and Low Library's floors are terrazzo now, the arches, window surrounds and doorways sienna, the tomb's dais and well edge dark marble.
 
 **31 October 2026**
@@ -190,12 +205,6 @@ What has changed, newest first (the game's own **Changelog** shows the same).
 **1 November 2026**
 
 - Real stone in the walk-ins: the interiors' marble, granite and limestone are now made from free photo-scanned textures (Poly Haven, CC0; credited in CREDITS.md), brought down to 64 px and 16 colours each. New stones: white marble, verde antico (Low Library's columns now), red granite (for Grant's sarcophagi), grey granite, limestone; the cream and dark marble, Siena squares and the WTC's lobby floor are photo stone too, their old colours kept. And no grid on a big floor or a tall wall any more: every stone has four versions, slabs turned and mirrored one by one, jointless stone shifted and blended by a slow noise, a slow change of tone over it all (stone_tiles.py, TowerInterior.STONES).
-
-<details>
-<summary>Older changes</summary>
-
-**1 November 2026**
-
 - Cameos, batch 3, second part: all 19 of Mo's list are in (docs/CAMEOS.md). Fuzzbo, a little furry creature of his own, singing on a crate outside a curio shop in Chinatown; E.L. and the BMX kid riding across the full moon over Central Park (a silhouette in the sky, once a full-moon night); Snack-Man and the four ghost kids running round Times Square on Halloween night. Lines, Bis's reactions, portraits, credits (E.T., Gremlins 2, Pac-Man).
 - Loading freezes, stage 4c: the far shores' houses (LaGuardia's, the Bronx, New Jersey) worked out on a worker thread a tile at a time, only put up on the main thread (a tile was up to half a second of a frame once the island was up); the traffic's cars and signals and the crowd's animation packs loaded in the background from the start of the city's load (most of a second on the spot as each went in). The 1.8 s physics step at the menu in Mo's load times doesn't happen in the cloud: the freeze log now splits a frame's physics into the physics engine's own step and the scripts', and the opening shot's spot search is timed, so the next log says which.
 - Bis's cape looked wrong in a few still moves (Mo: "not all look good, especially the kneeling before candle up"): in the focus kneel before the candle launch it stood straight up into the sky like a board, crouched it bunched, and climbing up a ledge and landing on one knee it stuck out behind him like a flag. The baker now keeps the shape it cleans towards in the world's directions (it had swung up with his back as he bowed), won't let a still cape rise against gravity, and lays a bad frame of a still pose over his back and down to the floor as a heavy cape drapes: kneeling, the cape now covers his back and falls to the ground round him. Two of the cape's rules no longer misread a man bowed over (cloth hanging down off his shoulders isn't "bunched", and off his hips towards his feet isn't "in front of him").

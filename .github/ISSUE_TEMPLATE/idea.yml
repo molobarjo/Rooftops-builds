@@ -1,0 +1,45 @@
+# Copied to molobarjo/Rooftops-builds/.github/ISSUE_TEMPLATE/ by
+# tools/export/publish_builds_readme.sh; edit it here, never in the builds repository.
+name: "💡 Une idée / An idea"
+description: "Une idée pour rendre le jeu plus amusant ? / An idea to make the game more fun?"
+title: "[Idée] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Toutes les idées sont les bienvenues, petites ou grandes !
+        *Every idea is welcome, small or big!*
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: "Votre idée / Your idea"
+      description: |
+        Décrivez-la comme vous la voyez.
+        *Describe it the way you picture it.*
+    validations:
+      required: true
+
+  - type: input
+    id: where
+    attributes:
+      label: "Où dans le jeu ? / Where in the game?"
+      description: |
+        Un quartier, un moment, un pouvoir, un menu... (facultatif)
+        *A neighbourhood, a moment, a power, a menu... (optional)*
+
+  - type: textarea
+    id: why
+    attributes:
+      label: "Pourquoi ce serait amusant ? / Why would it be fun?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: media
+    attributes:
+      label: "Une image pour montrer ? (facultatif) / A picture to show? (optional)"
+      description: |
+        Un dessin, une capture, un lien vers un film ou un jeu qui vous inspire.
+        *A drawing, a screenshot, a link to a film or game that inspires you.*
